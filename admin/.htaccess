@@ -1,0 +1,15 @@
+AuthName "Enter you login and password for marshrut.info admin panel"
+AuthType Basic
+AuthUserFile /var/www/marshrut/public_html/admin/.htpasswd
+require valid-user
+
+Options +FollowSymLinks  
+RewriteEngine On  
+  
+RewriteCond %{SCRIPT_FILENAME} !-d  
+RewriteCond %{SCRIPT_FILENAME} !-f  
+  
+RewriteRule ^ajaxUpdateRoute(\d+)*$ ./index.php?ajaxUpdateRoute 
+
+#RewriteRule ^threads/(\d+)*$ ./thread.php?id=$1    
+#RewriteRule ^search/(.*)$ ./search.php?query=$1  
